@@ -1,6 +1,5 @@
 package Vistas;
 
-import Modulos.calculadoraModule;
 import control.calculadoraControl;
 import java.awt.*;
 import javax.swing.*;
@@ -17,17 +16,15 @@ public class DashBoard extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        calculadoraModule modelo = new calculadoraModule();
-
         panelDisplay display = new panelDisplay();
         panelBoton botones = new panelBoton();
 
-        calculadoraControl control = new calculadoraControl(modelo, display);
-
+        calculadoraControl control = new calculadoraControl(display);
 
         botones.agregarController(control);
 
         add(display, BorderLayout.NORTH);  
         add(botones, BorderLayout.CENTER);  
+
     }
 }
