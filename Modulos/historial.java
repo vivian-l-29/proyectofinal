@@ -1,24 +1,31 @@
 package Modulos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class historial {
-    private List<String> operaciones;
+
+    private File archivo;
 
     public historial() {
-        operaciones = new ArrayList<>();
+        archivo = new File("database/historial.txt");
+        try {
+            if (!archivo.exists()) archivo.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void agregarOperacion(String operacion) {
-        operaciones.add(operacion);
-    }
-
-    public List<String> getOperaciones() {
-        return operaciones;
+        try (FileWriter fw = new FileWriter(archivo, true)) {
+            fw.write(operacion + "\n"); 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void limpiar() {
-        operaciones.clear();
-    }
+        archivo.delete(); 
+}
 }
