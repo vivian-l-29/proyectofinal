@@ -8,14 +8,15 @@ import utils.diseño;
 public class panelBoton extends JPanel {
 
     private String[] botones = {
+
+        "√","sin","cos","tan",
+        "asin","acos","atan","e^x",
+        "π","e","n!","|x|",
+        "x^y","x²","∛","C",
         "7","8","9","+",
         "4","5","6","-",
         "1","2","3","*",
-        "0",".","C","/",
-        "x^y","x²","√","∛",
-        "sin","cos","tan","=",
-        "asin","acos","atan","e^x",
-        "π","e","n!","|x|",
+        "0",".","=","/",
         "replay","limpiar"
     };
 
